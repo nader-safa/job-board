@@ -18,6 +18,13 @@
         @else
             <p class="status">Draft</p>
         @endif
+
+        @if($post->comments)
+            <h3>Comments</h3>
+            @foreach($post->comments as $comment)
+                <p>{{ $comment->content }}, {{ $comment->author }}</p>
+            @endforeach
+        @endif
     </div>
 
     <a href="{{ url('/blog') }}">Back to Posts</a>
